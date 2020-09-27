@@ -1,10 +1,19 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="MyShopTestSuite " verbose="1" >
+<suite name="MyShopTestSuite " verbose="1" parallel="tests" >
     <test name="Test in Chrome" >
         <classes>
             <parameter name="browser" value="chrome"></parameter>
             <parameter name="os" value="windows"></parameter>
+            <class name="com.myname.demo.LoginTests" />
+            <class name="com.myname.demo.ShoppingTest" />
+        </classes>
+    </test>
+
+    <test name="Test in OSx Firefox" >
+        <classes>
+            <parameter name="browser" value="firefox"></parameter>
+            <parameter name="os" value="osx"></parameter>
             <class name="com.myname.demo.LoginTests" />
             <class name="com.myname.demo.ShoppingTest" />
         </classes>
