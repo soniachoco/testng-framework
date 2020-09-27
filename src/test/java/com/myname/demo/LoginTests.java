@@ -10,17 +10,21 @@ public class LoginTests {
         System.out.println("Login test with valid user and password");
         String exp = "hello";
         String act ="hello";
-               Assert.assertEquals(act, exp, "the words don match");
+               Assert.assertEquals(act, exp, "the words dont match");
     }
 
     @Test (priority = 2, testName ="Login with invalid name and password" )
     public void loginwithInvalidTest(){
         System.out.println(" Login with invalid test user and password");
+        Assert.fail(" Invalid user, login test failed");
     }
 
     @Test (priority = 3, testName = "Verify homepage title")
     public void homePageTest(){
         System.out.println("this is a home page test");
+        String act= "Homepage";
+        String exp="Homepage";
+        Assert.assertTrue(exp==act, "homepage title is incorrect");
     }
 
     @Test (priority = 4, testName = "Verify logout")
