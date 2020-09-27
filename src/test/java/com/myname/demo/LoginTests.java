@@ -1,9 +1,30 @@
 package com.myname.demo;
 
 import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+import org.w3c.dom.ls.LSOutput;
 
 public class LoginTests {
+
+    @BeforeClass
+    public void beforeClass(){
+        System.out.println("Before class method executed");
+    }
+
+    @AfterClass
+    public void afterClass(){
+        System.out.println("After class method executed");
+    }
+    @BeforeMethod
+        public void beforeMethod() {
+        System.out.println("Before method executed..");
+    }
+
+        @AfterMethod
+        public void afteMethod(){
+            System.out.println("After method executed...");
+        }
+
 
     @Test (priority = 1, testName = "Login with valid name and password")
     public void loginwithValidTest(){
