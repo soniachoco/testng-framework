@@ -3,6 +3,8 @@
 <suite name="MyShopTestSuite " verbose="1" >
     <test name="Test in Chrome" >
         <classes>
+            <parameter name="browser" value="chrome"></parameter>
+            <parameter name="os" value="windows"></parameter>
             <class name="com.myname.demo.LoginTests" />
             <class name="com.myname.demo.ShoppingTest" />
         </classes>
