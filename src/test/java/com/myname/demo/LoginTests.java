@@ -6,6 +6,26 @@ import org.w3c.dom.ls.LSOutput;
 
 public class LoginTests {
 
+    @BeforeSuite
+    public void beforeSuite() {
+        System.out.println("Before suite is executed");
+    }
+
+    @AfterSuite
+        public void afterSuite(){
+            System.out.println("After suite is executed");
+        }
+
+    @BeforeTest
+    public void beforeTest(){
+        System.out.println("Before test is executed");
+    }
+
+    @AfterTest
+    public void afterTest(){
+        System.out.println("After test is executed");
+    }
+
     @BeforeClass
     public void beforeClass(){
         System.out.println("Before class method executed");
