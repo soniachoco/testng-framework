@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import org.w3c.dom.ls.LSOutput;
 
+import java.sql.SQLOutput;
+
 public class LoginTests {
 
     @BeforeSuite
@@ -49,9 +51,14 @@ public class LoginTests {
         }
 
 
-    @Test (priority = 1, testName = "Login with valid name and password")
-    public void loginwithValidTest(){
+    @Test (priority = 1,
+            testName = "Login with valid name and password",
+            dataProvider= "userInfo",
+    dataProviderClass = TestData.class)
+    public void loginWithValidTest(String username, String password){
         System.out.println("Login test with valid user and password");
+        System.out.println("username:" + username);
+        System.out.println("password: " + password);
         String exp = "hello";
         String act ="hello";
                Assert.assertEquals(act, exp, "the words dont match");
